@@ -1,0 +1,100 @@
+@import "config";
+
+// Reset
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 30px;
+    font-size: 16px;
+    background-color: $main-background-color;
+    user-select: none;
+
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: $second-background-color;
+    width: 600px;
+    height: 600px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px white;
+
+    &-title{
+        font-size: 5.5rem;
+        margin: 0;
+
+        &.won{
+            color: #59E391;
+            text-shadow: 0px 5px 1px black;
+        }
+    }
+
+    &-info{
+        font-size: 1.3rem;
+        line-height: 30px;
+        margin: 25px 0 50px 0;
+        font-weight: 100;
+    }
+
+    .die-container{
+        display: grid;
+        grid-template: auto auto / repeat(5 , 1fr);
+        gap: 35px;;
+        margin-bottom: auto;
+    }
+
+    &-btn{
+        background-color: $main-btn-color;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 15px 70px;
+        font-size: 1.7em; 
+        cursor: pointer;
+        margin-bottom: 30px;
+        @include transition(300ms);
+
+        &:hover{
+            background-color: hsla(220, 100%, 35%, 1);
+        }
+    }
+}
+
+
+.die{
+    background-color: #FFFFFF;
+    width: 75px;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    box-shadow: 1px 4px 4px hsla(0, 0%, 0%, 0.3);
+    cursor: pointer;
+    @include transition(300ms);
+
+    &:hover{
+        border: 2px solid $main-background-color;
+    }
+
+    &.isHeld{
+        background-color: $isHeld-color;
+    }
+
+    &-number{
+        font-size: 1.7rem;
+        font-weight: bold;
+    }
+}
+// Reset
